@@ -1,0 +1,32 @@
+{
+  "name": "friend-finder-app",
+  "version": "1.0.0",
+  "description": "Compatability based heroku app that involves full stack configuration and server routing through Express",
+  "main": "home.html",
+  "scripts": {
+    "test": "TEST"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/LeugimAtreides/Friend-Finder-App.git"
+  },
+  "keywords": [
+    "Express",
+    "UCF",
+    "Bootcamp",
+    "JavaScript",
+    "API",
+    "Compatability",
+    "Heroku"
+  ],
+  "author": "M.E. Villarreal",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/LeugimAtreides/Friend-Finder-App/issues"
+  },
+  "homepage": "https://github.com/LeugimAtreides/Friend-Finder-App#readme",
+  "dependencies": {
+    "express": "^4.17.1",
+    "materialize-css": "^1.0.0"
+  }
+}
