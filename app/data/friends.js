@@ -97,8 +97,8 @@ var friends =
             ]
         },
         {
-            name: "me",
-            photo: "12",
+            name: "Gucci Mane",
+            photo: "https://live.staticflickr.com/112/295545952_f43d4b9013_z.jpg",
             scores: [
                 "3",
                 "3",
@@ -113,8 +113,8 @@ var friends =
             ]
         },
         {
-            name: "me",
-            photo: "12",
+            name: "Tony Blair",
+            photo: "https://www.history.com/.image/t_share/MTU3ODc3NjU4MzYwODgyOTEx/tony-blair-on-the-death-of-princess-diana.jpg",
             scores: [
                 "3",
                 "3",
@@ -129,8 +129,8 @@ var friends =
             ]
         },
         {
-            name: "me",
-            photo: "12",
+            name: "Literally An Orca",
+            photo: "https://usatftw.files.wordpress.com/2019/02/orca.jpg?w=1000&h=600",
             scores: [
                 "3",
                 "3",
@@ -145,8 +145,8 @@ var friends =
             ]
         },
         {
-            name: "me",
-            photo: "12",
+            name: "A Charming Basket of Tomatoes",
+            photo: "https://www.displayfakefoods.com/store/pc/catalog/4670X-lg.jpg",
             scores: [
                 "3",
                 "3",
@@ -162,7 +162,7 @@ var friends =
         },
         {
             name: "GiantsFan555",
-            photo: "https://via.placeholder.com/150",
+            photo: "http://www.fantasyfootballchick.com/wp-content/uploads/2014/09/eli-manning-face.jpg",
             scores: [
                 "5",
                 "4",
@@ -177,7 +177,7 @@ var friends =
             ]
         },
         {
-            name: "far",
+            name: "Funky Far the Freaky Ninja Fan",
             photo: "https://i.kinja-img.com/gawker-media/image/upload/s--_iU5hnjV--/c_scale,f_auto,fl_progressive,q_80,w_800/naiqjp2jbpvcylp09utj.png",
             scores: [
                 "2",
@@ -193,8 +193,8 @@ var friends =
             ]
         },
         {
-            name: "aff",
-            photo: "adf",
+            name: "A Bustop in Brisbane",
+            photo: "https://i.pinimg.com/originals/0d/e8/41/0de841b3fb531f2138be0bc8e8050e71.jpg",
             scores: [
                 "1",
                 "1",
@@ -209,8 +209,8 @@ var friends =
             ]
         },
         {
-            name: "aff",
-            photo: "adf",
+            name: "The Rock",
+            photo: "http://www.photogriffon.com/photos-du-monde/DWAYNE-JOHNSON-THE-ROCK-th-best-pictures-ses-plus-belles-photos/DWAYNE-JOHNSON-THE-ROCK-photo-man-maxy-force-bodybuilding-1.jpg",
             scores: [
                 "1",
                 "1",
@@ -225,8 +225,8 @@ var friends =
             ]
         },
         {
-            name: "aff",
-            photo: "adf",
+            name: "Emilia Clarke",
+            photo: "https://timedotcom.files.wordpress.com/2016/05/rts8haa.jpg",
             scores: [
                 "1",
                 "1",
@@ -241,8 +241,8 @@ var friends =
             ]
         },
         {
-            name: "aff",
-            photo: "adf",
+            name: "Trout",
+            photo: "https://www.americanangler.com/wp-content/uploads/2017/08/SeptTrout1.jpg",
             scores: [
                 "1",
                 "1",
@@ -257,8 +257,8 @@ var friends =
             ]
         },
         {
-            name: "aff",
-            photo: "adf",
+            name: "A Guy Name Jeff",
+            photo: "https://i.kym-cdn.com/entries/icons/original/000/016/894/mynameehhjeff.jpg",
             scores: [
                 "1",
                 "1",
@@ -273,8 +273,8 @@ var friends =
             ]
         },
         {
-            name: "aff",
-            photo: "adf",
+            name: "McLovin",
+            photo: "https://uproxx.files.wordpress.com/2017/07/superbad.jpg?quality=100&w=650",
             scores: [
                 "1",
                 "1",
@@ -290,7 +290,7 @@ var friends =
         },
         {
             name: "Meow",
-            photo: "11",
+            photo: "https://i.redd.it/62fgxocnur901.jpg",
             scores: [
                 "1",
                 "2",
@@ -304,4 +304,8 @@ var friends =
                 "5"
             ]
         }
-    ]
+    ];
+
+// Now the data is ready for export
+
+module.exports = friendsArray;
