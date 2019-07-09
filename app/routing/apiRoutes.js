@@ -47,20 +47,49 @@ module.exports = function(app) {
 
             // push into the results the comparison with the smallest difference
             if (hold > compare) {
-
-                results.push(friendData[i + 1])
+                results.length = 0;
+                results.push(compare)
+                hold.length = 0;
+                compare.length = 0;
 
             }
 
             else if (hold < compare) {
-
-                results.push(friendData[i])
+                results.length = 0;
+                results.push(hold)
+                hold.length = 0;
+                compare.length = 0;
 
             }
 
+            if (hold < results) {
+                results.length = 0;
+                results.push(friendData[i])
+                hold.length = 0;
 
+            }
 
-        }
+            else if (hold > results) {
+                hold.length = 0
+            }
+
+            if (compare < results) {
+                results.length = 0;
+                results.push(friendData[i + 1])
+                compare.length = 0
+            }
+
+            else if (compare > results){
+                compare.length = 0;
+            }
+
+        };
+        
+        friendData.push(req.body)
+
+        return results;
+
+       
     })
 
 

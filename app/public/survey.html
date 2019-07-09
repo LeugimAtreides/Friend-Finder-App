@@ -239,14 +239,17 @@
 
           // Grab the result from the AJAX post so that the best match's name and photo are displayed.
          if(data) {
-             
-             $("#results-modal").show();
-             $("#match-name").text(data.name);
-             $("#match-img").text(data.photo);
-         }
 
-          // Show the modal with the best match
-         
+             $("#match-name").empty();
+
+            // use this ajax call in order to grab the results after the post method has calculated who the best response is
+            $.ajax({ url: "../routing/apiRoutes", method: "GET"})
+            .then(function(results) {
+                $(".modal-content").show();
+                $("#match-name").text(results.name)
+                $("#match-img").attr("src", results.photo);
+            })
+         }
 
         });
       } else {
