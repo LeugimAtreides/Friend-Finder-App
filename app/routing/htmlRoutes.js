@@ -9,7 +9,7 @@ module.exports = function(app){
     // this code handles when a user visits a page
 
     app.get("/survey", function(req, res) {
-        res.sendFile(path.join(__dirnma, "../public/survey.html"))
+        res.sendFile(path.join(__dirname, "../public/survey.html"))
     });
 
     app.get("*", function(req, res) {

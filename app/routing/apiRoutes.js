@@ -1,6 +1,10 @@
 // Here we are linking the routes to a "data" source
 var friendData = require("../data/friends");
-
+var newResponse = [];
+var hold = [];
+var compare = [];
+var userScoreSum = [];
+var results = [];
 // routing
 
 module.exports = function(app) {
@@ -13,6 +17,51 @@ module.exports = function(app) {
 
     app.post("/api/friends", function(req, res) {
         // this will handle when a user submits a form
-        friendData.push(req.body);
+        newResponse.push(req.body);
+
+        for (let i = 0; i < friendData.length; i++) {
+
+            // keep track of the first indexed item and its successor and turn the number strings into int arrays
+            let firstItem = friendData[i].scores;
+            firstItem = firstItem.map(Number);
+
+            let secondItem = friendData[i + 1].scores;
+            secondItem = secondItem.map(Number);
+
+            // create a variable that tracks only the score of the user response
+            let userScore = newResponse.scores;
+            userScore = userScore.map(Number);
+
+            // function that adds up the values in an array
+            arrSum = function(arr){
+                return arr.reduce(function(a,b){
+                    return a + b
+                }, 0);
+            };
+            // push the user sum into an array
+            userScoreSum.push(arrSum(userScore));
+
+            hold.push(Math.abs(userScoreSum - arrSum(firstItem)));
+
+            compare.push(Math.abs(userScoreSum - arrSum(secondItem)));
+
+            // push into the results the comparison with the smallest difference
+            if (hold > compare) {
+
+                results.push(friendData[i + 1])
+
+            }
+
+            else if (hold < compare) {
+
+                results.push(friendData[i])
+
+            }
+
+
+
+        }
     })
+
+
 }
