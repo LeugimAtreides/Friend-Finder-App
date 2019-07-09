@@ -308,4 +308,4 @@ var friends =
 
 // Now the data is ready for export
 
-module.exports = friendsArray;
+module.exports = friends;
