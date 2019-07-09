@@ -1,4 +1,4 @@
-var friends =
+var friendData =
     [
         {
             name: "Ahmed",
@@ -308,4 +308,4 @@ var friends =
 
 // Now the data is ready for export
 
-module.exports = friends;
+module.exports = friendData;

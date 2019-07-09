@@ -213,48 +213,59 @@
       event.preventDefault();
 
       // Form validation (a function that varifies is all questions have benn answered)
-    function validate(){
-        var form = $("#q1, #q2, #q3, #q4, #q5, #q6, #q7, #q8, #q9, #q10").val()
-        if ($.isNumeric(form) === true){
-            console.log("Form is valid");
-            return true;
-        } else {
-            // alert("Please complete the form fully! blank values are not allowed")
-            return false;
-        }
+    function validateForm(){
+        var isValid = true;
+        $(".form-control").each(function(){
+            if ($(this).val() === "") {
+                isValid = false;
+            }
+        });
+
+        $(".chosen-select").each(function() {
+            if ($(this).val() === "") {
+                isValid = false;
+            }
+        });
+        return isValid
     };
 
       // If all required fields are filled
-      if (validate()) {
+      if (validateForm()) {
+        
         // Create an object for the user"s data
         var userData = {
             name: $("#name").val().trim(),
             photo: $("#photo").val().trim(),
-            scores: $(".chosen-select").val() || []
+            scores: [
+            $("#q1").val(),
+            $("#q2").val(),
+            $("#q3").val(),
+            $("#q4").val(),
+            $("#q5").val(),
+            $("#q6").val(),
+            $("#q7").val(),
+            $("#q8").val(),
+            $("#q9").val(),
+            $("#q10").val()
+            ]
          
         };
 
+
         // AJAX post the data to the friends API.
         $.post("/api/friends", userData, function(data) {
+            console.log(data)
+            $("#match-name").text(data.name);
 
-          // Grab the result from the AJAX post so that the best match's name and photo are displayed.
-         if(data) {
+            $("#match-img").attr("src", data.photo)
 
-             $("#match-name").empty();
-
-            // use this ajax call in order to grab the results after the post method has calculated who the best response is
-            $.ajax({ url: "../routing/apiRoutes", method: "GET"})
-            .then(function(results) {
-                $(".modal-content").show();
-                $("#match-name").text(results.name)
-                $("#match-img").attr("src", results.photo);
-            })
-         }
-
-        });
+            $("#results-modal").modal("toggle");
+         });
       } else {
         alert("Please fill out all fields before submitting!");
       }
+      $(".form-control").val("")
+      $(".form-control").val("")
     });
   </script>
 
