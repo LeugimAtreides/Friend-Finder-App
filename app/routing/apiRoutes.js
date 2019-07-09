@@ -41,19 +41,21 @@ module.exports = function(app) {
             // push the user sum into an array
             userScoreSum.push(arrSum(userScore));
 
+            // push the difference between the user sum and the first item indexed sum into an array
             hold.push(Math.abs(userScoreSum - arrSum(firstItem)));
 
+            // ditto but for the second item
             compare.push(Math.abs(userScoreSum - arrSum(secondItem)));
 
-            // push into the results the comparison with the smallest difference
+            // push into "results" the array with the smallest difference
             if (hold > compare) {
                 results.length = 0;
                 results.push(compare)
                 hold.length = 0;
                 compare.length = 0;
-
             }
 
+            // push into results the first item if it is smaller than the second
             else if (hold < compare) {
                 results.length = 0;
                 results.push(hold)
@@ -62,6 +64,8 @@ module.exports = function(app) {
 
             }
 
+            // once the first number is present in the result array it can be used to compare it with each subsequent attempt looping attempt
+            // in this case if the 
             if (hold < results) {
                 results.length = 0;
                 results.push(friendData[i])
@@ -69,6 +73,7 @@ module.exports = function(app) {
 
             }
 
+            // if the result array already has a lower difference
             else if (hold > results) {
                 hold.length = 0
             }
@@ -83,11 +88,15 @@ module.exports = function(app) {
                 compare.length = 0;
             }
 
+            else if (compare > results && hold > results) {
+                break;
+            }
+
         };
-        
+
         friendData.push(req.body)
 
-        return results;
+        return res.json(results);
 
        
     })
